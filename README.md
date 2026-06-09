@@ -1,16 +1,117 @@
-# React + Vite
+# CodeArena 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full stack coding platform built with React, Node.js, Express, and MongoDB.
 
-Currently, two official plugins are available:
+CodeArena helps users practice coding problems, participate in contests, and improve problem-solving skills through a clean and responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 🔐 Authentication System
+* 👁 Password Visibility Toggle
+* 📱 Fully Responsive UI
+* 🌙 Modern Dark Theme
+* ⚡ Fast React + Vite Frontend
+* 🔗 React Router Navigation
+* 🛡 Secure Backend Authentication
+* 🎯 Contest & Problem Solving Platform (Upcoming)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+### Frontend
+
+* React.js
+* Vite
+* Tailwind CSS
+* React Router DOM
+* React Icons
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* JWT Authentication
+* bcryptjs
+
+---
+
+## 📂 Project Structure
+
+```bash
+CodeArena
+│
+├── backend
+│
+├── public
+├── src
+│   ├── Pages
+│   ├── Components
+│   └── App.jsx
+│
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## 🚀 Installation
+
+### Frontend
+
+```bash
+npm install
+npm run dev
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+---
+
+## 🌐 Environment Variables
+
+Create `.env` inside backend folder:
+
+```env
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+```
+
+---
+
+## 📸 UI Preview
+
+Modern responsive authentication UI with:
+
+* dark gradient background
+* glow effects
+* responsive forms
+* secure authentication flow
+
+---
+
+## 🎯 Future Improvements
+
+* Admin Panel
+* Coding Contest System
+* Certificate Generation
+* Leaderboards
+* Problem Submission System
+* AI Coding Assistant
+
+---
+
+## 👨‍💻 Author
+
+Built by Sabari
+
+---
