@@ -1,0 +1,119 @@
+
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import { FaEye, FaEyeSlash } from "react-icons/fa"
+
+//Because React needs to store:
+
+// email value
+// password value
+
+// Without state:
+// React cannot track user input.
+
+function Login() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    //eror-handling
+    const [error, setError] = useState("")
+    const [showPassword, setShowPassword] = useState(false)
+
+    const handleLogin = (e) => {
+        e.preventDefault()
+
+        if(!email || !password){
+            setError("All fields are required")
+            return
+        }
+
+        if(password.length<6){
+            setError("Password must be at least 6 characters")
+            return
+        }
+
+        setError("") //Clears previous errors.
+
+        console.log(email)
+        console.log(password)
+    }
+
+
+    return (
+       <div className="h-screen flex items-center justify-center bg-gradient-to-br from-zinc-950 via-zinc-900 to-black relative overflow-hidden px-4">
+
+    {/* Glow Effects */}
+    <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"></div>
+
+    <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
+
+    {/* Login Card */}
+    <div className="relative z-10 bg-zinc-900 p-6 sm:p-8 rounded-xl w-full max-w-sm border border-zinc-800 shadow-2xl">
+
+        <h1 className="text-white text-2xl sm:text-3xl font-bold pb-4">
+            Login
+        </h1>
+
+        {error && (
+            <p className="text-red-500 mb-4">
+                {error}
+            </p>
+        )}
+
+        <form onSubmit={handleLogin}>
+
+            <input
+                type="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full p-3 rounded-lg bg-zinc-800 text-white outline-none text-sm sm:text-base"
+            />
+
+            <div className="relative mt-4">
+
+                <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full p-3.5 rounded-xl bg-zinc-800 border border-zinc-700 text-white outline-none pr-12 text-sm sm:text-base focus:ring-2 focus:ring-white transition"
+                />
+
+                <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition"
+                >
+                    {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                </button>
+
+            </div>
+
+            <button
+                className="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-zinc-300 transition mt-4 text-sm sm:text-base"
+            >
+                Login
+            </button>
+
+            <div className="flex justify-between text-sm text-zinc-400 mt-4">
+
+                <p>Forgot Password?</p>
+
+                <Link
+                    to="/register"
+                    className="hover:text-white transition"
+                >
+                    Create Account
+                </Link>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+    )
+}
+
+export default Login
